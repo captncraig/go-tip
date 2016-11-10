@@ -7,7 +7,7 @@ Docker image for golang from latest master. Built hourly.
 Use exaclty like you would the basic `golang` image. 
 
 ```
-FROM captncraig/golang-tip
+FROM captncraig/go-tip
 ```
 
 
