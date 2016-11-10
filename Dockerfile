@@ -6,12 +6,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		gcc \
 		libc6-dev \
 		make \
+		pkg-config \
 	&& rm -rf /var/lib/apt/lists/*
 
 #binaries for bootstrap
 RUN mkdir /bootstrap
-RUN curl -fsSL "https://golang.org/dl/go1.7.1.linux-amd64.tar.gz" -o golang.tar.gz \
-	&& echo "43ad621c9b014cde8db17393dc108378d37bc853aa351a6c74bf6432c1bbd182  golang.tar.gz" | sha256sum -c - \
+RUN curl -fsSL "https://golang.org/dl/go1.7.3.linux-amd64.tar.gz" -o golang.tar.gz \
+	&& echo "508028aac0654e993564b6e2014bf2d4a9751e3b286661b0b0040046cf18028e  golang.tar.gz" | sha256sum -c - \
 	&& tar -C /bootstrap -xzf golang.tar.gz \
 	&& rm golang.tar.gz
 
